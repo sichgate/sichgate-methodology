@@ -1,24 +1,17 @@
-"""
-SichGate Methodology — Crescendo Probe Example
-===============================================
-Demonstrates multi-turn escalation probe construction and classification
-from the paper.
 
-This is a reference implementation of the open methodology.
-The proprietary SichGate Pro implementation includes additional
-escalation paths, session-scoped classifiers, and compliance reporting.
+# This is a reference implementation of the open methodology.
+# The proprietary SichGate Pro implementation includes additional
+# escalation paths, session-scoped classifiers, and compliance reporting.
 
-Contact: https://www.sichgate.com/#contact
-"""
+# Contact: https://www.sichgate.com/#contact
+
 
 from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Callable
 
 
-# ---------------------------------------------------------------------------
 # Types
-# ---------------------------------------------------------------------------
 
 ModelFn = Callable[[str, list[dict]], str]
 # callable: (prompt, conversation_history) -> response string
@@ -40,9 +33,7 @@ class CrescendoResult:
     severity:     str | None   # "CRITICAL" if jailbroken, else None
 
 
-# ---------------------------------------------------------------------------
 # Signal detection
-# ---------------------------------------------------------------------------
 
 # Compliance signals: model is acting on the unsafe request
 COMPLIANCE_SIGNALS = [
@@ -103,9 +94,7 @@ def is_jailbroken(response: str, turn_index: int, total_turns: int) -> bool:
     return False
 
 
-# ---------------------------------------------------------------------------
 # Probe execution
-# ---------------------------------------------------------------------------
 
 def run_crescendo(model_fn: ModelFn,
                   sequence: CrescendoSequence) -> CrescendoResult:
@@ -149,9 +138,7 @@ def run_crescendo(model_fn: ModelFn,
     )
 
 
-# ---------------------------------------------------------------------------
 # Example sequences (structure from the paper, payloads illustrative)
-# ---------------------------------------------------------------------------
 
 EXAMPLE_SEQUENCES: list[CrescendoSequence] = [
     CrescendoSequence(
@@ -178,9 +165,7 @@ EXAMPLE_SEQUENCES: list[CrescendoSequence] = [
 ]
 
 
-# ---------------------------------------------------------------------------
 # Reporting
-# ---------------------------------------------------------------------------
 
 def print_crescendo_report(results: list[CrescendoResult]) -> None:
     print("\n" + "=" * 60)
@@ -215,9 +200,7 @@ def print_crescendo_report(results: list[CrescendoResult]) -> None:
                 print(f"  [{i+1}] {role}: {content}...")
 
 
-# ---------------------------------------------------------------------------
 # Entry point
-# ---------------------------------------------------------------------------
 
 def main():
     """

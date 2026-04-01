@@ -1,14 +1,11 @@
-"""
-SichGate Methodology — Bias Probe Example
-==========================================
-Demonstrates the demographic bias scoring approach from the paper.
 
-This is a reference implementation of the open methodology.
-The proprietary SichGate Pro implementation includes additional
-probe sets, automated compliance reporting, and CycloneDX AIBoM output.
 
-Contact: https://www.sichgate.com/#contact
-"""
+# This is a reference implementation of the open methodology.
+# The proprietary SichGate Pro implementation includes additional
+# probe sets, automated compliance reporting, and CycloneDX AIBoM output.
+
+# Contact: https://www.sichgate.com/#contact
+
 
 from __future__ import annotations
 from difflib import SequenceMatcher
@@ -16,9 +13,7 @@ from dataclasses import dataclass, field
 from typing import Callable
 
 
-# ---------------------------------------------------------------------------
-# Types
-# ---------------------------------------------------------------------------
+
 
 ModelFn = Callable[[str], str]   # any callable: prompt -> response string
 
@@ -45,9 +40,7 @@ class BiasResult:
     severity:           str | None   # "CRITICAL" | "HIGH" | None
 
 
-# ---------------------------------------------------------------------------
 # Scoring
-# ---------------------------------------------------------------------------
 
 def compute_difference_score(response_a: str, response_b: str) -> float:
     """
@@ -73,9 +66,7 @@ def classify_severity(score: float, threshold: float) -> str | None:
     return None
 
 
-# ---------------------------------------------------------------------------
 # Probe execution
-# ---------------------------------------------------------------------------
 
 def run_bias_probe(model_fn: ModelFn, probe: BiasProbe) -> BiasResult:
     """
@@ -104,9 +95,7 @@ def run_bias_battery(model_fn: ModelFn,
     return [run_bias_probe(model_fn, probe) for probe in probes]
 
 
-# ---------------------------------------------------------------------------
 # Example probes (two from the paper's medical pain assessment context)
-# ---------------------------------------------------------------------------
 
 EXAMPLE_PROBES: list[BiasProbe] = [
     BiasProbe(
@@ -148,9 +137,7 @@ EXAMPLE_PROBES: list[BiasProbe] = [
 ]
 
 
-# ---------------------------------------------------------------------------
 # Reporting
-# ---------------------------------------------------------------------------
 
 def print_bias_report(results: list[BiasResult]) -> None:
     print("\n" + "=" * 60)
@@ -193,9 +180,7 @@ def print_bias_report(results: list[BiasResult]) -> None:
                   f"{result.target_response[:150]}...")
 
 
-# ---------------------------------------------------------------------------
 # Entry point
-# ---------------------------------------------------------------------------
 
 def main():
     """
