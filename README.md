@@ -3,7 +3,7 @@
 **SichGate Adversarial ML Security Lab** — Open methodology specification for systematic black-box adversarial evaluation of small language models (SLMs) in regulated industry deployments.
 
 This repository documents the evaluation framework underlying the paper:
-> *Small Models, Large Risks: Systematic Adversarial Evaluation of Small Language Models in Regulated Industry Deployments* — Polina Moshenets, SichGate Adversarial ML Security Lab (`research@sichgate.com`)
+> *Small Models, Large Risks: Systematic Adversarial Evaluation of Small Language Models in Regulated Industry Deployments* — Polina Moshenets, SichGate Adversarial ML Security Lab (`https://www.sichgate.com/#contact`)
 
 The proprietary implementation (`sichgate-pro`) is available to qualified researchers and regulated-industry practitioners. This repository provides the open methodology: attack category specifications, probe construction logic, classification rubrics, and compliance mappings.
 
@@ -119,6 +119,6 @@ From the paper (6 models, 154 tests each, 924 total interactions):
 
 ## Contact
 
-Qualified researchers and regulated-industry practitioners seeking access to the proprietary evaluation framework (`sichgate-pro`) can contact: **research@sichgate.com**
+Qualified researchers and regulated-industry practitioners seeking access to the proprietary evaluation framework (`sichgate-pro`) can contact: **https://www.sichgate.com/#contact**
 
 For responsible disclosure of findings in specific deployment contexts, use the same address.

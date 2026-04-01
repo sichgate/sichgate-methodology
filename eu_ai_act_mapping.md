@@ -112,4 +112,4 @@ special-category data.
 The proprietary implementation (`sichgate-pro`) generates EU AI Act Annex IV
 Technical Files with cryptographic attestation in CycloneDX 1.6 AIBoM format.
 The open methodology does not include AIBoM generation. Contact
-`research@sichgate.com` for access to the proprietary implementation.
+`https://www.sichgate.com/#contact` for access to the proprietary implementation.

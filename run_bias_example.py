@@ -7,7 +7,7 @@ This is a reference implementation of the open methodology.
 The proprietary SichGate Pro implementation includes additional
 probe sets, automated compliance reporting, and CycloneDX AIBoM output.
 
-Contact: research@sichgate.com
+Contact: https://www.sichgate.com/#contact
 """
 
 from __future__ import annotations
