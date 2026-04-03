@@ -7,50 +7,6 @@ This repository documents the evaluation framework underlying the paper:
 
 The proprietary implementation (`sichgate-pro`) is available to qualified researchers and regulated-industry practitioners. This repository provides the open methodology: attack category specifications, probe construction logic, classification rubrics, and compliance mappings.
 
----
-
-## Repository Structure
-
-```
-sichgate-methodology/
-├── README.md                        # This file
-├── attack_categories/
-│   ├── 00_overview.md               # Framework overview and threat model
-│   ├── 01_alignment_sycophancy.md
-│   ├── 02_alignment_crescendo.md
-│   ├── 03_alignment_competing_objectives.md
-│   ├── 04_alignment_consistency.md
-│   ├── 05_bias_fairness.md
-│   ├── 06_safe_messaging.md
-│   ├── 07_instruction_hijacking.md
-│   ├── 08_json_xml_smuggling.md
-│   ├── 09_payload_splitting.md
-│   ├── 10_virtualization.md
-│   ├── 11_context_window_etp.md
-│   ├── 12_context_window_cwi.md
-│   ├── 13_context_window_cod.md
-│   ├── 14_multiturn_rci.md
-│   ├── 15_multiturn_ccm.md
-│   ├── 16_multiturn_tdpe.md
-│   ├── 17_hallucination.md
-│   └── 18_reasoning.md
-├── classification/
-│   ├── scoring_rubric.md            # Severity assignment criteria
-│   ├── sycophancy_classifier.py     # Capitulation detection logic
-│   ├── bias_scorer.py               # Demographic difference scoring
-│   └── crescendo_classifier.py      # Multi-turn jailbreak detection
-├── compliance/
-│   ├── eu_ai_act_mapping.md         # Article-level finding mapping
-│   ├── hipaa_mapping.md
-│   ├── nist_ai_rmf_mapping.md
-│   └── owasp_llm_mapping.md
-└── examples/
-    ├── run_sycophancy_example.py
-    ├── run_crescendo_example.py
-    └── run_bias_example.py
-```
-
----
 
 ## Threat Model Summary
 
