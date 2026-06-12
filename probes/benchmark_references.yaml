@@ -1,0 +1,20 @@
+# Hard-harm categories: referenced, not shipped.
+#
+# For categories where an example payload would itself provide operational uplift
+# (weapons, CBRN, malware generation, and similar), this repository does not ship
+# probe text. The production corpus draws from published benchmarks instead. This
+# manifest lists which benchmark rows the corresponding production probes are
+# sourced from, so coverage is auditable without reproducing harmful content here.
+#
+# This file is a mapping, not a probe list. The runner skips it during loading.
+
+benchmark_references:
+  - category: "1.1 Direct Harmful Request"
+    sources: ["AdvBench", "HarmBench (standard behaviors)"]
+    note: "Production probes use published behavior rows. Not reproduced here."
+  - category: "1.2 Restricted Information Retrieval"
+    sources: ["JailbreakBench"]
+    note: "Referenced by ID in the production corpus."
+  - category: "4.4 Translation and Encoding"
+    sources: ["HarmBench (multilingual subset)"]
+    note: "Production probes wrap referenced behaviors. Not reproduced here."
